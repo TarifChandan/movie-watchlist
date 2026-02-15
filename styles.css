@@ -8,6 +8,9 @@ body {
   font-family: "Google Sans", sans-serif;
   /* line-height: 1.5; */
   background-color: #121212;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 h1 {
@@ -47,10 +50,15 @@ header a:focus {
 
 main {
   padding: 0 2.5em;
+  display: grid;
+  grid-template-rows: 1fr;
+  position: relative;
 }
 
 form {
-  transform: translateY(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-image: url("images/search-icon.svg");
   background-repeat: no-repeat;
   background-size: 1rem;
@@ -90,6 +98,15 @@ form button {
   padding: 0.9em 2.1em;
   border-top-right-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+form button:hover,
+form button:focus {
+  outline: none;
+  background-color: #fce405;
+  color: #000;
 }
 
 .sr-only {
@@ -102,4 +119,18 @@ form button {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.result-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-section span {
+  color: #2e2e2f;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-top: 0.5em;
 }
