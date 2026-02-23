@@ -26,12 +26,14 @@
           type="search"
           placeholder="Search for a movie"
           id="search-movie"
+          name="searchMovie"
         />
         <button>Search</button>
       </form>
+      <div id="search-status" class="sr-only" aria-live="polite"></div>
       <div class="result-section">
         <img src="images/film-icon.svg" alt="A film icon" />
-        <span>Start exploring</span>
+        <span class="result-section-title">Start exploring</span>
       </div>
     </main>
     <script src="script.js"></script>
