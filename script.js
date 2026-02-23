@@ -9,7 +9,7 @@ if (form) {
     const formData = new FormData(form);
     const searchInput = formData.get("searchMovie");
 
-    fetch(`http://www.omdbapi.com/?apikey=381dbb2&s=${searchInput}`)
+    fetch(`https://www.omdbapi.com/?apikey=381dbb2&s=${searchInput}`)
       .then((res) => res.json())
       .then((data) => {
         const searchResults = data.Search;
@@ -20,7 +20,7 @@ if (form) {
           resultSection.classList.add("results-appeared");
 
           searchResults.forEach((result) => {
-            fetch(`http://www.omdbapi.com/?apikey=381dbb2&i=${result.imdbID}`)
+            fetch(`https://www.omdbapi.com/?apikey=381dbb2&i=${result.imdbID}`)
               .then((res) => res.json())
               .then((movie) => {
                 resultSection.innerHTML += `
@@ -98,7 +98,7 @@ resultSection.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-btn")) {
     const movieID = e.target.dataset.id;
 
-    fetch(`http://www.omdbapi.com/?apikey=381dbb2&i=${movieID}`)
+    fetch(`https://www.omdbapi.com/?apikey=381dbb2&i=${movieID}`)
       .then((res) => res.json())
       .then((data) => {
         const id = data.imdbID;
