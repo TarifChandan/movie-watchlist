@@ -200,7 +200,7 @@ function displayResult() {
     resultSection.innerHTML = `
       <span class="status-msg">
         Your watchlist is looking a little empty...</span>
-      <a href="index.html" class="search-link">
+      <a href="./" class="search-link">
         <img src="images/add-to-watchlist-icon.svg" alt="" />
         Let's add some movies!
       </a>
