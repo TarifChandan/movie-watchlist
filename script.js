@@ -147,7 +147,7 @@ resultSection.addEventListener("click", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", (e) => {
-  if (window.location.pathname === "/watchlist.html") {
+  if (window.location.pathname.includes("watchlist.html")) {
     if (localStorage.getItem("watchlist") !== null) {
       watchlist = JSON.parse(localStorage.getItem("watchlist"));
       displayResult();
