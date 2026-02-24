@@ -6,7 +6,6 @@
 
 body {
   font-family: "Google Sans", sans-serif;
-  /* line-height: 1.5; */
   background-color: #121212;
   min-height: 100vh;
   display: grid;
@@ -310,5 +309,37 @@ form button:focus {
 
   .movie-content {
     width: 100%;
+  }
+}
+
+@media (min-width: 650px) {
+  body {
+    grid-template-columns: repeat(15, 1fr);
+  }
+
+  header,
+  main {
+    grid-column: 2/15;
+  }
+}
+
+@media (min-width: 800px) {
+  header,
+  main {
+    grid-column: 3/14;
+  }
+}
+
+@media (min-width: 960px) {
+  header,
+  main {
+    grid-column: 4/13;
+  }
+}
+
+@media (min-width: 1330px) {
+  header,
+  main {
+    grid-column: 5/12;
   }
 }
