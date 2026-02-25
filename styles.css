@@ -285,7 +285,7 @@ form button:focus {
   color: #fce405;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 475px) {
   header {
     flex-direction: column;
     row-gap: 0.8em;
