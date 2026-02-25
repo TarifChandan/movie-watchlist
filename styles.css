@@ -157,6 +157,12 @@ form button:focus {
 
 .results-appeared {
   padding-top: 2.5em;
+  justify-content: flex-start;
+}
+
+.watchlist-results {
+  padding-top: 1em;
+  justify-content: flex-start;
 }
 
 /* RESULT SECTION WITH MOVIES */
