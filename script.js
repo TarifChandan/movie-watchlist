@@ -48,7 +48,7 @@ if (form) {
                         ${
                           movie.Plot.length > 131
                             ? `${movie.Plot.substring(0, 131)}... 
-                            <button data-plot="${movie.Plot}" 
+                            <button data-id='${movie.imdbID}' 
                               class='read-more-btn' type='button'>Read more
                             </button>`
                             : movie.Plot
@@ -141,8 +141,12 @@ resultSection.addEventListener("click", (e) => {
   }
 
   if (e.target.classList.contains("read-more-btn")) {
-    const moviePlot = e.target.dataset.plot;
-    e.target.parentElement.textContent = moviePlot;
+    const movieID = e.target.dataset.id;
+    fetch(`https://www.omdbapi.com/?apikey=381dbb2&i=${movieID}`)
+      .then((res) => res.json())
+      .then((movie) => {
+        e.target.parentElement.textContent = movie.Plot;
+      });
   }
 });
 
@@ -151,6 +155,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     if (localStorage.getItem("watchlist") !== null) {
       watchlist = JSON.parse(localStorage.getItem("watchlist"));
       displayResult();
+      resultSection.classList.add("watchlist-results");
     }
   }
 });
@@ -188,7 +193,7 @@ function displayResult() {
             ${
               movie.Plot.length > 131
                 ? `${movie.Plot.substring(0, 131)}... 
-                <button data-plot="${movie.Plot}" class='read-more-btn' type='button'>Read more</button>`
+                <button data-id='${movie.id}' class='read-more-btn' type='button'>Read more</button>`
                 : movie.Plot
             }
           </p>
