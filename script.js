@@ -155,7 +155,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     if (localStorage.getItem("watchlist") !== null) {
       watchlist = JSON.parse(localStorage.getItem("watchlist"));
       displayResult();
-      resultSection.classList.add("watchlist-results");
     }
   }
 });
@@ -165,6 +164,7 @@ function displayResult() {
 
   if (watchlist.length > 0) {
     watchlist.forEach((movie) => {
+      resultSection.classList.add("watchlist-results");
       resultSection.innerHTML += `
       <div class="movie-card card-watchlist">
         <div class="movie-poster"> 
